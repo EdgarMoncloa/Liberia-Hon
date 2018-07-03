@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>
+		Libros Hon - Los mejores libros!!
+	</title>
+	<link rel="stylesheet" type="text/css" href="css/hon.css">
+	<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
+
+</head>
+<body>
+	<section id="portada" class="portada background" > <!-- portada -->
+		<header id="header" class="header contenedor" >	<!-- header -->
+			<figure class="logotipo"> <!-- Logotipo -->
+				<img src="images/hon_white.png" width="300" height="150" alt="Hon Logotipo"/>
+			</figure>
+			<nav class="menu"> <!-- Menú -->			
+				<ul>
+					<li>
+						<a href="index.html">Home</a>
+					</li>
+					<li>
+						<a href="#libros">Libros</a>
+					</li>
+					<li>
+						<a href="precios.html">Precios</a>
+					</li>
+				</ul>
+			</nav>
+		</header>		
+		<div class="contenedor">
+			<h1 class="titulo">Libros Hon</h1><!-- titulo -->
+			<h3 class="title-a">El catalogo de libros extranjeros mas grande de México</h3><!-- resumen -->
+			<a href="#libros"class="button">Conoce mas</a><!-- botón -->
+		</div>
+	</section>
+	<section id="libros" class="libros contenedor"> <!-- libros -->
+		<h2>Libros disponibles</h2><!-- titulo -->
+		<article class="libro derecha"> <!-- libro 1 -->
+			<img class="derecha" src="images/mondaiji.jpg" alt="Portada libro mondaiji" width="300" />			
+			<div class="contenedorLibroA">
+				<h3 class="title-b">Mondaiji tachi ga isekai kara kuru sou desu yo vol 11</h3>
+				<ol>
+					<li>200 páginas</li>
+					<li>Idioma: japonés</li>
+					<li>Edición: estándar</li>
+				</ol>
+			</div>
+		</article>
+		<article class="libro izquierda"> <!-- Libro 2 -->
+			<img class="izquierda" src="images/NGNL1.jpg" alt="Portada libro No game no life" width="300" />
+			<div class="contenedorLibroB">
+				<h3 class="title-b">No Game No Life</h3>
+				<ol>
+					<li>250 Paginas</li>
+					<li>Idioma: Ingles</li>
+					<li>Edición: Coleccionista</li>
+				</ol>
+			</div>
+		</article>		
+	</section>	
+</body>
+<footer class="footer">
+	<div class="contenedor">
+		<div class="contacto">
+			<img src="images/hon.png" alt="logotipo blanco"/>
+			<a href="tel:+516561234567"><strong>Telefono: </strong><span>6561234567</span></a>
+			<a href="mailto:contactohon@exaple.com"><strong>E-mail: </strong><span>Contactohon@exaple.com</span></a>
+		</div>
+		<form class="formulario">				
+			<div class="col1">
+				<label for="nombre">Nombre</label>
+				<input type="text" name="nombre" required/ placeholder="Ingresa tu nombre" id="nombre">
+				<label for="email">E-Mail</label>
+				<input type="text" name="email" required/ placeholder="Ingresa tu E-Mail" id="email">
+				<div class="sexo">					
+					<label for="mujer">
+						<input type="radio" name="sexo" id="mujer" value="mujer" checked>Mujer
+					</label>
+					<label for="Hombre">
+						<input type="radio" name="sexo" id="Hombre" value="hombre">Hombre
+					</label>
+				</div>
+				<div class="intereses">
+					<label for="cotizacion">
+						<input type="checkbox" name="intereses" id="cotizacion" value="cotizacion">Cotización
+					</label>
+					<label for="reclamos">
+						<input type="checkbox" name="intereses" id="reclamos" value="reclamos">Reclamos
+					</label>
+					<label for="comentarios">
+						<input type="checkbox" name="intereses" id="comentarios" value="comentarios">Comentarios
+					</label>
+					<label for="otros">
+						<input type="checkbox" name="intereses" id="otros" value="otros">Otros
+					</label>
+				</div>
+			</div>
+			<div class="col2">
+				<label for="comentarios">Comentarios</label>
+				<textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
+				<input type="submit" class="button"/>						
+			</div>
+
+		</div>
+	</form>
+</div>
+
+</footer>
+</html>
