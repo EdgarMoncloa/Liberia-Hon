@@ -3,7 +3,7 @@ body{
 	margin: 0;
 }
 table{
-	width: 100%	;
+	width: auto;
 	margin-top:30px;
 	margin-bottom: 30px;
 }
@@ -69,10 +69,13 @@ input:focus,textarea:focus{
 .libro ol{
 	padding: 0;
 }
+.libro li{
+	list-style: decimal;
+}
 .portada{	
 	color: white;
 	padding: 20px;
-	height: 400px;
+	height: auto;
 }
 .portada button{
 	margin-bottom: 70px;
@@ -127,15 +130,16 @@ input:focus,textarea:focus{
 	border: none;
 	padding: 10px 20px 10px 20px;	
 	font-size: 20px;
-	background: linear-gradient(to left,#fe344e,#ff7250);
 	cursor: pointer;
 	text-decoration: none;
+	display: inline-block;
+	margin-bottom: 30px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
-background: #f3c5bd; /* Old browsers */
-background: -moz-linear-gradient(top,  #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 75%, #c72200 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); /* IE6-9 */
+	background: #f3c5bd; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f3c5bd 0%, #e86c57 50%, #ea2803 51%, #ff6600 75%, #c72200 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f3c5bd 0%,#e86c57 50%,#ea2803 51%,#ff6600 75%,#c72200 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); /* IE6-9 */
 
 }
 
@@ -190,4 +194,42 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', end
 }
 .sexo{
 	margin-top: 14px;
+}
+
+@media screen and (max-width: 800px){	
+	/*portada*/
+	.titulo{
+		font-size: 45px;
+		margin-top: 30px;
+	}
+	.title-a{
+		font-size: 18px;
+	}
+	.portada .button{
+		margin-bottom: 30px;
+	}
+	/*portada*/
+	/*libros*/
+	.libros{	
+		text-align: center;	
+	}
+	.izquierda, .derecha{
+		float: none;
+		position: static;
+	}
+	.izquierda img, .derecha img{
+		float: none;
+	}
+	.title-b{
+		margin:0;
+		font-size:30px;
+	}
+	.contenedorLibroB{
+		margin:0;
+	}
+	.libro li {
+		list-style: none;		
+	}
+	/*libros*/
+
 }
