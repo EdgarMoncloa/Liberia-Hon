@@ -40,9 +40,11 @@
 	</section>
 	<section id="libros" class="libros contenedor"> <!-- libros -->
 		<h2>Libros disponibles:</h2><!-- titulo -->
-		<div class="video-responsive-container">
-			<iframe class='video-responsive-src' width="560" height="315" src="https://www.youtube.com/embed/qQpOcHsMUnA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
-		</div>	
+		<div class="video-demo">
+			<div class="video-responsive-container">
+				<iframe class='video-responsive-src' width="560" height="315" src="https://www.youtube.com/embed/qQpOcHsMUnA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+			</div>	
+		</div>
 		<article class="libro derecha"> <!-- libro 1 -->
 			<img class="derecha" data-src="images/mondaiji.jpg" alt="Portada libro mondaiji" width="300" />			
 			<div class="contenedorLibroA">
@@ -111,30 +113,41 @@
 		</div>
 	</footer>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
 	<script type="text/javascript">
 		var consulta=window.matchMedia('(max-width: 550px)');
 		consulta.addListener(mediaQuery);
 		
 		var $burguerButton = document.getElementById('burguer-button');
 		var $menu = document.getElementById('menu');
-
-		mediaQuery();
+		mediaQuery();		
 		function mediaQuery(){
 			if(consulta.matches){
-				console.log('se cumplio');
 				$burguerButton.addEventListener('touchstart',toogleMenu);				
 			}else{
-				console.log('no se cumplio');
 				$burguerButton.removeEventListener('touchstart',toogleMenu);	
 			}			
 		}
+
 		function toogleMenu(){
 			$menu.classList.toggle('active');
 		}
+		function showMenu(){
+			$menu.classList.add('active');
+		}
+		function hideMenu(){
+			$menu.classList.remove('active');
+		}
+
 		//loading beLazy
 		var bLazy = new Blazy({
 		   selector:'img'
 		});
+		// gestos touchstart		
+		var $body=document.body;
+		var gestos = new Hammer($body);
+		gestos.on('swipeleft',hideMenu);
+		gestos.on('swiperight',showMenu);
 		
 	</script>
 </body>
