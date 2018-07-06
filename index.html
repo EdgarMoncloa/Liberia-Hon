@@ -7,15 +7,18 @@
 	</title>
 	<link rel="stylesheet" type="text/css" href="css/hon.css">
 	<link href="https://fonts.googleapis.com/css?family=Allerta|Montserrat:400,700" rel="stylesheet">
+	<meta name="viewport" content="width = device-width , initial-scale=1 user-scalable=no">
 	<!-- <link rel="stylesheet" type="text/css" href="css/media-querie.css" media="(max-width: 800px)"> -->
 </head>
 <body>
 	<section id="portada" class="portada background" > <!-- portada -->
 		<header id="header" class="header contenedor" >	<!-- header -->
 			<figure class="logotipo"> <!-- Logotipo -->
-				<img src="images/hon_white.png" width="300" height="150" alt="Hon Logotipo"/>
+				<img src="images/hon_white.png" width="250" height="150" alt="Hon Logotipo"/>
 			</figure>
-			<nav class="menu"> <!-- Menú -->			
+			<span class="burguer-button icon-menu" id="burguer-button">				
+			</span>
+			<nav class="menu" id="menu"> <!-- Menú -->			
 				<ul>
 					<li>
 						<a href="index.html">Home</a>
@@ -36,9 +39,12 @@
 		</div>
 	</section>
 	<section id="libros" class="libros contenedor"> <!-- libros -->
-		<h2>Libros disponibles</h2><!-- titulo -->
+		<h2>Libros disponibles:</h2><!-- titulo -->
+		<div class="video-responsive-container">
+			<iframe class='video-responsive-src' width="560" height="315" src="https://www.youtube.com/embed/qQpOcHsMUnA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>	
+		</div>	
 		<article class="libro derecha"> <!-- libro 1 -->
-			<img class="derecha" src="images/mondaiji.jpg" alt="Portada libro mondaiji" width="300" />			
+			<img class="derecha" data-src="images/mondaiji.jpg" alt="Portada libro mondaiji" width="300" />			
 			<div class="contenedorLibroA">
 				<h3 class="title-b">Mondaiji tachi ga isekai kara kuru sou desu yo vol 11</h3>
 				<ol>
@@ -49,7 +55,7 @@
 			</div>
 		</article>
 		<article class="libro izquierda"> <!-- Libro 2 -->
-			<img class="izquierda" src="images/NGNL1.jpg" alt="Portada libro No game no life" width="300" />
+			<img class="izquierda" data-src="images/NGNL1.jpg" alt="Portada libro No game no life" width="300" />
 			<div class="contenedorLibroB">
 				<h3 class="title-b">No Game No Life</h3>
 				<ol>
@@ -60,11 +66,10 @@
 			</div>
 		</article>		
 	</section>	
-</body>
-<footer class="footer">
-	<div class="contenedor">
+	<footer class="footer">
+		<div class="contenedor">
 		<div class="contacto">
-			<img src="images/hon.png" alt="logotipo blanco"/>
+			<img data-src="images/hon.png" alt="logotipo"/>
 			<a href="tel:+516561234567"><strong>Telefono: </strong><span>6561234567</span></a>
 			<a href="mailto:contactohon@exaple.com"><strong>E-mail: </strong><span>Contactohon@exaple.com</span></a>
 		</div>
@@ -102,10 +107,36 @@
 				<textarea name="comentarios" id="comentarios" cols="30" rows="7"></textarea>
 				<input type="submit" class="button"/>						
 			</div>
-
+		</form>
 		</div>
-	</form>
-</div>
+	</footer>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
+	<script type="text/javascript">
+		var consulta=window.matchMedia('(max-width: 550px)');
+		consulta.addListener(mediaQuery);
+		
+		var $burguerButton = document.getElementById('burguer-button');
+		var $menu = document.getElementById('menu');
 
-</footer>
+		mediaQuery();
+		function mediaQuery(){
+			if(consulta.matches){
+				console.log('se cumplio');
+				$burguerButton.addEventListener('touchstart',toogleMenu);				
+			}else{
+				console.log('no se cumplio');
+				$burguerButton.removeEventListener('touchstart',toogleMenu);	
+			}			
+		}
+		function toogleMenu(){
+			$menu.classList.toggle('active');
+		}
+		//loading beLazy
+		var bLazy = new Blazy({
+		   selector:'img'
+		});
+		
+	</script>
+</body>
+
 </html>
